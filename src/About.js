@@ -32,6 +32,8 @@ export function Myabout1()
         <img src={myimage2} width="300" alt="photos10"/>
         <div className="first">this is text <h1>heading</h1></div>
         {10+90}
+        <input type="button" value="submit" className="btn btn-danger shadow p-3"/>
+
         </div>
         </Fragment>
     )
