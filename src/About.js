@@ -24,6 +24,7 @@ export function Myabout1()
 {
     return(
         <Fragment>
+        <div className="page">
         <p>this is text </p>
         <h2 style={{color:'red',backgroundColor:`${a}`}}>sdjfhsjdfh</h2>
         <img src={myimg1} width="300" alt="sdkjfksdj"/>
@@ -31,6 +32,7 @@ export function Myabout1()
         <img src={myimage2} width="300" alt="photos10"/>
         <div className="first">this is text <h1>heading</h1></div>
         {10+90}
+        </div>
         </Fragment>
     )
 }
