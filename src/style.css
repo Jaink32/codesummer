@@ -11,3 +11,12 @@
     text-align: center;
     padding:50px;
 }
+
+.mypage
+{
+    min-height: 80vh;
+}
+.ch
+{
+    margin-top: 70px !important;
+}
