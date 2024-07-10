@@ -7,6 +7,9 @@ import "./style.css";
 import Myloginpage from './modules/auth/Myloginpage';
 import Myregistorpage from './modules/auth/Myregistorpage';
 import Mylandingpage from './modules/pages/Mylandingpage';
+import Myerrorpage from './shares/Myerrorpage';
+import Myhomepage from './modules/pages/Myhomepage';
+import Serverpage from './modules/pages/Serverpage';
 
 
 
@@ -19,9 +22,12 @@ root.render(
       <Routes>
         <Route path='/' element={<Myloginpage/>}></Route>
         <Route path='registor' element={<Myregistorpage/>}></Route>
-        <Route path='dashboard' element={<Mylandingpage/>}></Route>
-        
-
+        <Route path='dashboard' element={<Mylandingpage/>}>
+              <Route path='' element={<Myhomepage/>}/>
+              <Route path='server' element={<Serverpage/>}/>
+              <Route path='*' element={<Myerrorpage/>}/>
+        </Route>
+        <Route path='*' element={<Myerrorpage/>}/>
       </Routes>
     
     

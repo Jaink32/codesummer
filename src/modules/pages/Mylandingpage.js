@@ -1,6 +1,9 @@
 import React from 'react'
 import Mynavbar from '../../shares/Mynavbar'
 import Myfooter from '../../shares/Myfooter'
+import Mysidebar from '../../shares/Mysidebar'
+import Myhomepage from './Myhomepage'
+import { Outlet } from 'react-router-dom'
 
 function Mylandingpage() {
   return (
@@ -11,10 +14,12 @@ function Mylandingpage() {
         </div>
     </div>
     <div className='row ch'>
-        <div className='col-md-2'></div>
+        <div className='col-md-2'>
+          <Mysidebar/>
+        </div>
         <div className='col-md-10'>
             <div className='mypage bg-light border'>
-                <h1>this is landing page</h1>
+               <Outlet/>
             </div>
         </div>
     </div>

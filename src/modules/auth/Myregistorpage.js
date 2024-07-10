@@ -7,7 +7,6 @@ function Myregistorpage() {
             <div className="row justify-content-center">
                 <div className="col-8 p-3 bg-light shadow">
                     <div className="container-fluid">
-
                         <div className="row">
                             <div className='col-12 text-center'>
                                 <h1>New Registor Page</h1>
