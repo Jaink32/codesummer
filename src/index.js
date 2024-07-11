@@ -10,6 +10,7 @@ import Mylandingpage from './modules/pages/Mylandingpage';
 import Myerrorpage from './shares/Myerrorpage';
 import Myhomepage from './modules/pages/Myhomepage';
 import Serverpage from './modules/pages/Serverpage';
+import Mycharts from './modules/pages/Mycharts';
 
 
 
@@ -25,6 +26,7 @@ root.render(
         <Route path='dashboard' element={<Mylandingpage/>}>
               <Route path='' element={<Myhomepage/>}/>
               <Route path='server' element={<Serverpage/>}/>
+              <Route path='graph' element={<Mycharts/>}/>
               <Route path='*' element={<Myerrorpage/>}/>
         </Route>
         <Route path='*' element={<Myerrorpage/>}/>

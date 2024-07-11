@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import axios from 'axios'
+import { MdDeleteSweep } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import { GrFormView } from "react-icons/gr";
+
 
 function Myhomepage() {
+
+    const [mydata, setdata] = useState([]);
+
+    const mygetdata = () => {
+        axios.get('https://jsonplaceholder.typicode.com/posts').then((d) => {
+            // console.log(d);
+            setdata(d.data)
+        })
+    }
+
+useEffect(()=>{
+    mygetdata();
+},[])
+
+
+
     return (
         <div className='container-fluid'>
             <div className='row'>
@@ -51,18 +72,42 @@ function Myhomepage() {
                 </div>
             </div>
             <div className='row'>
-                <div className='col-md-7 p-2'>
-                    <div className='shadow bg-light text-center p-3'>
-                    <h1>charts</h1>
+                <div className='col-12'>
+                    <input type='button' value="getdata from api" onClick={mygetdata} />
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">userid</th>
+                                <th scope="col">title</th>
+                                <th scope="col">body text</th>
+                                <th scope="col" width={150}>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {mydata.map((d) => {
+                                return (
+                                    <tr key={d.id}>
+                                        <th scope="row">{d.id}</th>
+                                        <td>{d.userId}</td>
+                                        <td>{d.title}</td>
+                                        <td>{d.body}</td>
+                                        <td>
+                                        <span className="badge text-bg-warning m-2 p-2"><FaEdit/></span>
+                                        <span className="badge text-bg-danger m-2 p-2"><MdDeleteSweep/></span>
+                                        <span className="badge text-bg-info m-2 p-2"><GrFormView/></span>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
 
-                    </div>
-                </div>
-                <div className='col-md-5 p-2'>
-                    <div className='shadow bg-light text-center'>
-                        <h1>Charts type</h1>
-                    </div>
+                        </tbody>
+                    </table>
+
                 </div>
             </div>
+
+
 
         </div>
     )
