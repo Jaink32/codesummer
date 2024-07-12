@@ -11,6 +11,7 @@ import Myerrorpage from './shares/Myerrorpage';
 import Myhomepage from './modules/pages/Myhomepage';
 import Serverpage from './modules/pages/Serverpage';
 import Mycharts from './modules/pages/Mycharts';
+import Detailspage from './modules/pages/Detailspage';
 
 
 
@@ -27,6 +28,7 @@ root.render(
               <Route path='' element={<Myhomepage/>}/>
               <Route path='server' element={<Serverpage/>}/>
               <Route path='graph' element={<Mycharts/>}/>
+              <Route path='view/:id' element={<Detailspage/>}/>
               <Route path='*' element={<Myerrorpage/>}/>
         </Route>
         <Route path='*' element={<Myerrorpage/>}/>

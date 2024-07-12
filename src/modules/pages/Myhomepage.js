@@ -3,6 +3,7 @@ import axios from 'axios'
 import { MdDeleteSweep } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { GrFormView } from "react-icons/gr";
+import { Link } from 'react-router-dom';
 
 
 function Myhomepage() {
@@ -95,7 +96,7 @@ useEffect(()=>{
                                         <td>
                                         <span className="badge text-bg-warning m-2 p-2"><FaEdit/></span>
                                         <span className="badge text-bg-danger m-2 p-2"><MdDeleteSweep/></span>
-                                        <span className="badge text-bg-info m-2 p-2"><GrFormView/></span>
+                                        <span className="badge text-bg-info m-2 p-2"><Link to={`view/`+d.id}><GrFormView/></Link></span>
                                         </td>
                                     </tr>
                                 )
